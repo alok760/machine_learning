@@ -18,3 +18,9 @@ clf.fit(train_data, train_target)
 
 print(test_target)
 print(clf.predict(test_data))
+
+
+import graphviz
+dot_data = tree.export_graphviz(clf, out_file=None)
+graph = graphviz.Source(dot_data)
+graph.render("iris")
